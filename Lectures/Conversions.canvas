@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"a94020c782ea5a1e","type":"text","text":"Mp3 audio decoder","x":340,"y":-260,"width":203,"height":60},
+		{"id":"2d3a7f18114b216b","type":"text","text":"A-to-D Converter","x":-160,"y":-260,"width":186,"height":60},
+		{"id":"953bf70f8494934d","type":"text","text":"MP3 audio encoder ","x":80,"y":-260,"width":202,"height":60},
+		{"id":"a51be42581c8e100","x":600,"y":-260,"width":186,"height":60,"type":"text","text":"D-to-A Converter "},
+		{"id":"e0696f4def0309b2","x":80,"y":-400,"width":250,"height":60,"type":"text","text":"Need to put in the labels on the arrows"},
+		{"id":"97060b2f36ed589e","x":-99,"y":0,"width":250,"height":60,"type":"text","text":"digital camera"},
+		{"id":"35c3f188fa43d303","x":282,"y":0,"width":250,"height":60,"type":"text","text":"png"},
+		{"id":"f9735439ee0143aa","x":661,"y":0,"width":250,"height":60,"type":"text","text":"photo editor"},
+		{"id":"1aaf40f6be0a1ca6","x":980,"y":0,"width":250,"height":60,"type":"text","text":"monitor"}
+	],
+	"edges":[
+		{"id":"fd12c6712c72be01","fromNode":"2d3a7f18114b216b","fromSide":"right","toNode":"953bf70f8494934d","toSide":"left"},
+		{"id":"7743fe730767c375","fromNode":"953bf70f8494934d","fromSide":"right","toNode":"a94020c782ea5a1e","toSide":"left"},
+		{"id":"061fe60a9167dbf3","fromNode":"a94020c782ea5a1e","fromSide":"right","toNode":"a51be42581c8e100","toSide":"left"},
+		{"id":"5650a07920c3287d","fromNode":"1aaf40f6be0a1ca6","fromSide":"top","toNode":"a51be42581c8e100","toSide":"bottom"},
+		{"id":"a774522dbfdd6fcf","fromNode":"f9735439ee0143aa","fromSide":"top","toNode":"a94020c782ea5a1e","toSide":"bottom"},
+		{"id":"d4dfca25d792e50f","fromNode":"35c3f188fa43d303","fromSide":"top","toNode":"953bf70f8494934d","toSide":"bottom"},
+		{"id":"7c2efa3d425a0889","fromNode":"97060b2f36ed589e","fromSide":"top","toNode":"2d3a7f18114b216b","toSide":"bottom"}
+	]
+}
