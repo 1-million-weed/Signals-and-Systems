@@ -83,7 +83,7 @@ Getting information from a signal can be challenging. {In class we had an exampl
 #_Err_Mismatch #_Err_Design
 ### Definition [[Signal]]\*
 \* Hint: check the definition with hover + ctrl! 
-- *{put the pointer thingy on the purple thingy and press ctrl on the keyboard - do not use the mouse buttons here}*
+- *{put the pointer thingy on the purple thingy and press ctrl on the keyboard - do not use the mouse buttons here}* 
 
 > Continuous: function ~~f(x)~~ over time t ==\element R==. E.g. Human speech
 > --> X(t)
@@ -123,6 +123,30 @@ Getting information from a signal can be challenging. {In class we had an exampl
 
 
 Complete tutorial exercises
+
+#_FirstPass
+# Friday lecture
+---
+announcement: go to tutorials {ok thanks professor}
+
+## Recap
+- [[Signal]]: a pattern of variations
+- [[System]]: an operator that transforms a signal
+	- type: converter (a->d), (d->a)
+
+### Signal types
+- Continues: index in real numbers $\mathbb{R}$
+	- x(t)
+	- In graph: a solid (continues) lined sine function #_Err_Design 
+- Discrete
+	- x\[t]
+	- In graph: a set of discrete variance points
+
+## Sinusoid
+$x(t) = A cos(w_{0} t + \varphi)$
+
+
+
 
 ---
 Answer: it depends! {yeah, fuck you}
