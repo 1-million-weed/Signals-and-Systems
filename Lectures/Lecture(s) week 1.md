@@ -83,6 +83,8 @@ Getting information from a signal can be challenging. {In class we had an exampl
 #_Err_Mismatch #_Err_Design
 ### Definition [[Signal]]\*
 \* Hint: check the definition with hover + ctrl! 
+--> Change this in preferences/page preview
+
 - *{put the pointer thingy on the purple thingy and press ctrl on the keyboard - do not use the mouse buttons here}* 
 
 > Continuous: function ~~f(x)~~ over time t ==\element R==. E.g. Human speech
@@ -107,16 +109,16 @@ Getting information from a signal can be challenging. {In class we had an exampl
 > 4. digital video
 
 --> answer at bottom of the file
-#_Err_Design 
+
 ### Definition [[System]]
 
 - continuous-time system transforms continuous-time signals
-	- ==y(t)=T{x(t)}==
+	- $y(t)=T{x(t)}$
 - discrete-time system transforms discrete-time signals
-	- ==Y\[n]=T{x\[n]}==
+	- $Y[n]=T{x[n]}$
 - sampler: continuous to digital signals
-	- ==x\[n]=x(nTs)==
-	- where ==Ts== is the sampling period
+	- $x[n]=x(nTs)$
+	- where $Ts$ is the sampling period
 
 
 [[Conversions.canvas|Conversions]]
@@ -144,6 +146,37 @@ announcement: go to tutorials {ok thanks professor}
 
 ## Sinusoid
 $x(t) = A cos(w_{0} t + \varphi)$
+
+Sinusoid signal 
+
+| Variable                                                                                                        | Formula                                |
+| --------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| $f$ is the **cyclic frequency**,<br>$w_o$ is the **radian frequency**                                           | $$w_o = 2 \pi f$$                      |
+| $T$ is the **period** {slay}                                                                                    | $$T = \frac{1}{f} = \frac{2\pi}{w_o}$$ |
+| $\phi$ or $\varphi$ is the phase                                                                                | $$-2\pi \frac{t_1}{T} = -w_ot_1$$      |
+| $n$ is the number of iterations<br>$t_n$ is the $n^{th}$ peak, where:<br>$t_1$ is the first peak after zero<br> | $$T = \frac{(t_1-t_0)}{n}$$            |
+### Amplitude
+The amplitude $A$ is found when halving the distance between the top and bottom of a sine wave.
+- $A$ is the distance from the max to 0
+- $-A$ is the distance from the min to 0
+![[images.png]]
+
+A tuning fork produces a nice {$~vedinaissss~$} sinusoid at e.g. 440 hertz.
+Think of frequency as musical notes (a, b, c, etc )
+
+
+| Property    | Cosine equation                               | Sine equation                                 |
+| ----------- | --------------------------------------------- | --------------------------------------------- |
+| Equivalence | $$cos(\theta) = sin(\theta + \frac{\pi}{2})$$ | $$sin(\theta) = cos(\theta - \frac{\pi}{2})$$ |
+| Maxima      | $$cos(2k\pi)=1$$                              | $$sin((2k+\frac{1}{2})\pi) = 1$$              |
+| Minima      | $$cos((2k+1)\pi)=-1$$                         | $$sin((2k-\frac{1}{2})\pi)=-1$$               |
+| Zeroes      | $$cos((k + \frac{1}{2})\pi)=0$$               | $$sin(k\pi)=0$$                               |
+
+
+## Complex signals
+e.g. speech
+
+Complex signals tend to be periodic
 
 
 
