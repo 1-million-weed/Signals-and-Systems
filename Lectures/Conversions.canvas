@@ -10,8 +10,8 @@
 		{"id":"35c3f188fa43d303","type":"text","text":"e.g.: a png","x":140,"y":-100,"width":250,"height":60,"color":"5"},
 		{"id":"f9735439ee0143aa","type":"text","text":"e.g.: a photo editor","x":532,"y":-100,"width":250,"height":60,"color":"5"},
 		{"id":"1aaf40f6be0a1ca6","type":"text","text":"e.g.: a monitor","x":860,"y":-100,"width":250,"height":60,"color":"5"},
-		{"id":"f5ffd5a82afcacd2","type":"file","file":"SaS/Lectures/Note.md","x":610,"y":-549,"width":327,"height":169,"color":"1"},
-		{"id":"663f4d71e3662a8a","type":"file","file":"SaS/_Conventions.md","x":-620,"y":80,"width":400,"height":208}
+		{"id":"f5ffd5a82afcacd2","type":"file","file":"Lectures/Note.md","x":610,"y":-549,"width":327,"height":169,"color":"1"},
+		{"id":"663f4d71e3662a8a","type":"file","file":"_Conventions.md","x":-620,"y":80,"width":620,"height":260}
 	],
 	"edges":[
 		{"id":"7743fe730767c375","fromNode":"953bf70f8494934d","fromSide":"right","toNode":"a94020c782ea5a1e","toSide":"left","color":"2","label":"y[n]"},
