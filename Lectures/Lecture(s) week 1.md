@@ -126,7 +126,6 @@ Getting information from a signal can be challenging. {In class we had an exampl
 
 Complete tutorial exercises
 
-#_FirstPass
 # Friday lecture
 ---
 announcement: go to tutorials {ok thanks professor}
@@ -140,9 +139,9 @@ announcement: go to tutorials {ok thanks professor}
 - Continues: index in real numbers $\mathbb{R}$
 	- x(t)
 	- In graph: a solid (continues) lined sine function #_Err_Design 
-- Discrete
+- Discrete: has gaps between possible data points
 	- x\[t]
-	- In graph: a set of discrete variance points
+	- In graph: a set of discrete variance points #_Err_Design 
 
 ## Sinusoid
 $x(t) = A cos(w_{0} t + \varphi)$
@@ -173,13 +172,42 @@ Think of frequency as musical notes (a, b, c, etc )
 | Zeroes      | $$cos((k + \frac{1}{2})\pi)=0$$               | $$sin(k\pi)=0$$                               |
 
 
-## Complex signals
-e.g. speech
+## Complex Exponential signals
+Signals can mathematically be presented as sinusoids. This is not always simple though.
+
+We work with the imaginary unit $j$, where $j^2 = -1$ 
+- (From [[Euler's formula]])
 
 Complex signals tend to be periodic
 
 
+## Cartesian form
+- A.k.a. rectangular form
+Complex numbers are represented as points in a 2d plane:
+- $z = (a,b)$
+- $= a+jb$
+- $= \real{z}+j(\imaginary{z})$ #_Err_Design 
+![[Pasted image 20241128170901.png]]
 
+
+## Polar form
+complex numbers are represented in lengths and angles
+- $z=r \angle \theta$
+- $=r *cos(\theta)+j*r* sin(\theta)$
+here 
+- $\theta \in (-\pi, \pi]$  is the angle in radians (rad)
+- r > 0 is the radius length
+
+![[Pasted image 20241128171300.png]]
+
+## Relation between Polar and Cartesian
+$$z = (a,b)$$$$r=\sqrt{a^2+b^2}$$ $$\theta=arctan(\frac{b}{a})$$
+## complex exponential signal general form
+
+$z(t) =Ae^{j(w_0t+\varphi)} =A cos(w_{0} t + \varphi) + jAsin(w_0t+\varphi)$
+>[!note] Remember: **cos** is related to the **real** part, **sin** is related to the **imaginary** part {and to God}
+
+slide 28/44 of lec 1b #_FirstPass
 
 ---
 Answer: it depends! {yeah, fuck you}
