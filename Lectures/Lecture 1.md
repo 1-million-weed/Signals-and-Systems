@@ -26,7 +26,7 @@ Signal independent of time - EEGs
 
 ### Definition [[Signal]]
 
-> Continious: function f(x) over time t \element R. E.g. Human speech
+> Continuous: function f(x) over time t \element R. E.g. Human speech
 
 > Discrete: Function x\[n\] that is only defined n \element Z E.g. digital recording of human speech
 
