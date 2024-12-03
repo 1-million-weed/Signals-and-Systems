@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"332a26891df47eb6","x":-260,"y":-60,"width":50,"height":60,"type":"text","text":""},
+		{"id":"8eae5b4ed195cf96","x":-120,"y":-60,"width":140,"height":60,"type":"text","text":"A-to-D converter"},
+		{"id":"a17c226e7613b5af","x":120,"y":-60,"width":160,"height":60,"type":"text","text":"Digital Processing"},
+		{"id":"e470e6fbadb61229","x":380,"y":-60,"width":140,"height":60,"type":"text","text":"D-to-A converter"},
+		{"id":"1a65e37fe9bb0bae","x":620,"y":-60,"width":50,"height":60,"type":"text","text":""}
+	],
+	"edges":[
+		{"id":"bfdb75f7ca37bb33","fromNode":"332a26891df47eb6","fromSide":"right","toNode":"8eae5b4ed195cf96","toSide":"left","label":"x(t)"},
+		{"id":"32579fcb33a98e0d","fromNode":"8eae5b4ed195cf96","fromSide":"right","toNode":"a17c226e7613b5af","toSide":"left","label":"x[n]"},
+		{"id":"aa3c66ad1d575e67","fromNode":"a17c226e7613b5af","fromSide":"right","toNode":"e470e6fbadb61229","toSide":"left","label":"y[n]"},
+		{"id":"3096b4c4ca6207d1","fromNode":"e470e6fbadb61229","fromSide":"right","toNode":"1a65e37fe9bb0bae","toSide":"left","label":"y(t))"}
+	]
+}
