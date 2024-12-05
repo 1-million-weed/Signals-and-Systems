@@ -1,22 +1,27 @@
 {
 	"nodes":[
-		{"id":"a94020c782ea5a1e","type":"text","text":"Mp3 audio decoder","x":340,"y":-260,"width":203,"height":60},
-		{"id":"2d3a7f18114b216b","type":"text","text":"A-to-D Converter","x":-160,"y":-260,"width":186,"height":60},
-		{"id":"953bf70f8494934d","type":"text","text":"MP3 audio encoder ","x":80,"y":-260,"width":202,"height":60},
-		{"id":"a51be42581c8e100","x":600,"y":-260,"width":186,"height":60,"type":"text","text":"D-to-A Converter "},
-		{"id":"e0696f4def0309b2","x":80,"y":-400,"width":250,"height":60,"type":"text","text":"Need to put in the labels on the arrows"},
-		{"id":"97060b2f36ed589e","x":-99,"y":0,"width":250,"height":60,"type":"text","text":"digital camera"},
-		{"id":"35c3f188fa43d303","x":282,"y":0,"width":250,"height":60,"type":"text","text":"png"},
-		{"id":"f9735439ee0143aa","x":661,"y":0,"width":250,"height":60,"type":"text","text":"photo editor"},
-		{"id":"1aaf40f6be0a1ca6","x":980,"y":0,"width":250,"height":60,"type":"text","text":"monitor"}
+		{"id":"a51be42581c8e100","type":"text","text":"D-to-A Converter ","x":727,"y":-260,"width":186,"height":60,"color":"3"},
+		{"id":"a94020c782ea5a1e","type":"text","text":"Mp3 audio decoder","x":329,"y":-260,"width":203,"height":60,"color":"3"},
+		{"id":"ca5735efbe03a9a5","type":"text","text":"*The ^ is supposed to be on top of the x*","x":610,"y":-380,"width":235,"height":57,"color":"5"},
+		{"id":"953bf70f8494934d","type":"text","text":"MP3 audio encoder ","x":0,"y":-260,"width":202,"height":60,"color":"3"},
+		{"id":"2d3a7f18114b216b","type":"text","text":"A-to-D Converter","x":-340,"y":-260,"width":186,"height":60,"color":"3"},
+		{"id":"4bc29086f2b2c040","type":"text","text":"in","x":-620,"y":-255,"width":80,"height":50},
+		{"id":"97060b2f36ed589e","type":"text","text":"e.g.: a digital camera","x":-250,"y":-100,"width":250,"height":60,"color":"5"},
+		{"id":"35c3f188fa43d303","type":"text","text":"e.g.: a png","x":140,"y":-100,"width":250,"height":60,"color":"5"},
+		{"id":"f9735439ee0143aa","type":"text","text":"e.g.: a photo editor","x":532,"y":-100,"width":250,"height":60,"color":"5"},
+		{"id":"1aaf40f6be0a1ca6","type":"text","text":"e.g.: a monitor","x":860,"y":-100,"width":250,"height":60,"color":"5"},
+		{"id":"f5ffd5a82afcacd2","type":"file","file":"Lectures/Note.md","x":610,"y":-549,"width":327,"height":169,"color":"1"},
+		{"id":"663f4d71e3662a8a","type":"file","file":"_Conventions.md","x":-620,"y":80,"width":620,"height":260}
 	],
 	"edges":[
-		{"id":"fd12c6712c72be01","fromNode":"2d3a7f18114b216b","fromSide":"right","toNode":"953bf70f8494934d","toSide":"left"},
-		{"id":"7743fe730767c375","fromNode":"953bf70f8494934d","fromSide":"right","toNode":"a94020c782ea5a1e","toSide":"left"},
-		{"id":"061fe60a9167dbf3","fromNode":"a94020c782ea5a1e","fromSide":"right","toNode":"a51be42581c8e100","toSide":"left"},
-		{"id":"5650a07920c3287d","fromNode":"1aaf40f6be0a1ca6","fromSide":"top","toNode":"a51be42581c8e100","toSide":"bottom"},
-		{"id":"a774522dbfdd6fcf","fromNode":"f9735439ee0143aa","fromSide":"top","toNode":"a94020c782ea5a1e","toSide":"bottom"},
-		{"id":"d4dfca25d792e50f","fromNode":"35c3f188fa43d303","fromSide":"top","toNode":"953bf70f8494934d","toSide":"bottom"},
-		{"id":"7c2efa3d425a0889","fromNode":"97060b2f36ed589e","fromSide":"top","toNode":"2d3a7f18114b216b","toSide":"bottom"}
+		{"id":"7743fe730767c375","fromNode":"953bf70f8494934d","fromSide":"right","toNode":"a94020c782ea5a1e","toSide":"left","color":"2","label":"y[n]"},
+		{"id":"061fe60a9167dbf3","fromNode":"a94020c782ea5a1e","fromSide":"right","toNode":"a51be42581c8e100","toSide":"left","color":"2","label":"^x(t)"},
+		{"id":"5650a07920c3287d","fromNode":"1aaf40f6be0a1ca6","fromSide":"top","toNode":"a51be42581c8e100","toSide":"bottom","color":"5"},
+		{"id":"a774522dbfdd6fcf","fromNode":"f9735439ee0143aa","fromSide":"top","toNode":"a94020c782ea5a1e","toSide":"bottom","color":"5"},
+		{"id":"d4dfca25d792e50f","fromNode":"35c3f188fa43d303","fromSide":"top","toNode":"953bf70f8494934d","toSide":"bottom","color":"5"},
+		{"id":"7c2efa3d425a0889","fromNode":"97060b2f36ed589e","fromSide":"top","toNode":"2d3a7f18114b216b","toSide":"bottom","color":"5"},
+		{"id":"98287ee348366564","fromNode":"2d3a7f18114b216b","fromSide":"right","toNode":"953bf70f8494934d","toSide":"left","color":"2","label":"x[n]"},
+		{"id":"1a4845d85d86f253","fromNode":"4bc29086f2b2c040","fromSide":"right","toNode":"2d3a7f18114b216b","toSide":"left","color":"2","label":"x(t)"},
+		{"id":"bf3cb6d3078e49b1","fromNode":"a94020c782ea5a1e","fromSide":"right","toNode":"ca5735efbe03a9a5","toSide":"left","color":"5"}
 	]
 }

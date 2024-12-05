@@ -1,3 +1,3 @@
 >[!note] There are 3 assignments
 
-Have a look here [[README#Assessment]]
+Have a look at the [[SaS/README|README]]
