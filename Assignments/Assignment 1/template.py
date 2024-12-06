@@ -1,4 +1,4 @@
-import math, cmath
+import math, cmath, itertools
 
 def get_input_data():
     input_1, input_2, input_3 = map(int, input().split())
@@ -151,3 +151,113 @@ def aliasing():
     # Output:
     # f integer
     print(f)
+
+def products_of_sinoids():
+    """
+    The product of n sinusoids.
+
+    Args:
+        f (list): A list frequencies of the sinusoids.
+    return:
+        str: A list of all the non-negative frequencies (in Hz) in the spectrum.
+    """
+    # So for this question we have to add all possible configurations the frequencies together.
+    # For N number of frequencies we have 2^N possible configurations
+    # We can use the itertools.product to get all the possible configurations
+    # and then we can add them together and store them in a set to only allow distinct values
+    # Finally we sort the set and return the values
+
+    # list to store the frequencies
+    frequencies = []
+    # get the frequency
+    while True:
+        freq = int(input())
+        if freq == 0:
+            break
+        frequencies.append(freq)
+
+    # next we calculate all the possible combination of frequencies
+    # and store them in a set to only allow distinct values
+    freq_set = set()
+
+    # we first get a list of all the sign combinations
+    sign_combinations = itertools.product([-1, 1], repeat=len(frequencies))
+    
+    # then loop over all the sign combinations
+    for combi in sign_combinations:
+        # calculate the result frequency of that sign combination
+        result_frequency = sum(sign * freq for sign, freq in zip(combi, frequencies))
+        if result_frequency >= 0:
+            freq_set.add(result_frequency)
+
+    # we sort the set and return the values
+    freq_set = sorted(list(freq_set))
+    for freq in freq_set:
+        print(freq)
+
+products_of_sinoids()
+
+
+def nyquist():
+    """
+    The minimum sampling frequency (in Hz) required to avoid aliasing.
+
+    Args:
+        f0 (int): The frequency of the sinusoid.
+    return:
+        int: The minimum sampling frequency.
+    """
+
+def nyquist_rate()->int:
+    """
+    !!! This does not work
+    The minimum sampling frequency (in Hz) required to avoid aliasing.
+    """
+    # get input list of frequencies
+    freqs = []
+    while True:
+        freq = int(input("Enter a frequency (0 to stop): ").strip())
+        if freq == 0:
+            break
+        freqs.append(freq)
+        
+    # make list of uniques
+    all_freqs = set(freqs)
+    
+    # calculate sums and differences
+    for i in range(len(freqs)):
+        for j in range(i + 1, len(freqs)):
+            f1, f2 = freqs[i], freqs[j]
+            diff = abs(f1 - f2)  # Difference frequency
+            if diff > 0:  # Ignore zero differences
+                all_freqs.add(diff)
+            all_freqs.add(f1 + f2)  # Sum frequency
+    
+    # find the maximum frequency
+    max_freq = max(all_freqs)
+    
+    # find and return nyquist rate
+    nyquist_rate = 2 * max_freq
+    return nyquist_rate
+
+def reflected_amplitude(dr,dt,x)->float:
+    #init frequency & light speeeeeed
+    c = 3 * 10**8
+    f = 150 * 10**6
+    
+    #find distance 1 & 2
+    dist_reciever = x
+    dist_reflector = math.sqrt(dr**2 + dt**2) + math.sqrt((x - dr)**2 + dt**2)
+    
+    #calculate time delay
+    time_direct = dist_reciever/c
+    time_indirect = dist_reflector/c
+    delta_time = abs(time_direct - time_indirect)
+    
+    #calculate phase difference
+    delta_phi = 2 * math.pi * f * delta_time
+    
+    #compute the amplitude
+    amplitude = abs(2 * math.cos(delta_phi/2))
+    
+    return round(amplitude, 2)
