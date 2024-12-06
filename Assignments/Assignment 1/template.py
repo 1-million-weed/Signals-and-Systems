@@ -86,7 +86,18 @@ def polar_to_cartesian(r, phi) -> tuple:
     #return cartesian
     return x, y
 
-def sum_of_sinoids() -> float:
+def sum_of_sinoids() -> str:
+    """
+    The sum of n sinusoids with the same frequency.
+
+    Args:
+        f (int): The frequency of the sinusoids.
+        n (int): The number of sinusoids.
+        a_phi (list): A list of amplitudes and phases.
+    return:
+        str: The resulting sinusoid equation.
+    """
+    # TODO: change from input to function arguments
     # input: 42 2 
     # 1 1.047198 
     # 1 0.523599 
@@ -112,3 +123,31 @@ def sum_of_sinoids() -> float:
     else:
         return "x(t)={}cos(2*pi*{}*{}*t+{})".format(amp, f, n, phase)
 
+def aliasing():
+    """
+    The frequency (in Hz) of the reconstructed sinusoid after a sinusoid
+    with frequency f0 has been sampled with frequency fs.
+
+    Args:
+        f0 (int): The frequency of the sinusoid.
+        fs (int): The sampling frequency.
+    return:
+        int: The frequency of the reconstructed sinusoid.
+    """
+    # TODO: change from input to function arguments
+    # Input: 
+    # f0 & fs
+    f0, fs = map(int, input().split())
+    
+    # remainder
+    f = f0 % fs
+
+    # check if f is greater than fs/2
+    if f > fs/2:
+        f = int(fs - f)
+    else:
+        f = int(f)
+
+    # Output:
+    # f integer
+    print(f)
