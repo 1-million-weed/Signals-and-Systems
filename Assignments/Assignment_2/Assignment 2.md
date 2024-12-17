@@ -26,3 +26,15 @@ For tips on type hinting and pep8 style recommendations:
 - 70% code
 - 30% documentation
 - look at [[lab2-main.pdf#page=2&offset=56.693,344.944|lab2-main, Grading Criteria]] for more info
+
+# 2. Problems - Notes
+## 2.1
+- *Sliding the filter through the signal* = Convolution of $h[n]$ and $x[n-k]$
+- [[lec4-main1.pdf]] slide 36 on *convolutions*
+- math to do:
+1. Input = Kernel $h[n]$, discrete input signal $x[n]$
+2. Calculate the sum of rows in matrix with columns $h[n]*x[n-k]$ like: 
+   {$h[0]*x[n-0]$, $h[1]*x[n-1]$ , $h[2]*x[n-2]$ }
+3. output vector with results
+
+2.2
