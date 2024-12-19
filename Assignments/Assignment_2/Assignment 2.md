@@ -119,10 +119,10 @@ Compute $H(\hat{\omega})$:
 Compute $Ay$​:
     
     $Ay=Ax⋅∣H(ω^)∣A_y = A_x \cdot |H(\hat{\omega})|Ay​=Ax​⋅∣H(ω^)∣$
-Compute $ϕy\phi_yϕy$​:
+Compute $\phi_y$​:
     
     $$ϕy=ϕx+∠H(ω^)\phi_y = \phi_x + \angle H(\hat{\omega})ϕy​=ϕx​+∠H(ω^)$$
-Normalize $ϕy\phi_yϕy$​, round values, and output.
+Normalize $\phi_y$​, round values, and output.
 3. **Output**: y\[n] = A_y cos( ˆωn - ϕy) 
 
 ## 2.5
