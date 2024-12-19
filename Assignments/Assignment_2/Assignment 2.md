@@ -7,6 +7,8 @@ Created: 2024-12-17
 # Topics 
 - [[Lecture 5 - FIR Filters]]
 - Frequency Response
+- [[Digital_Signal_Processing_First.pdf#page=168|Digital_Signal_Processing_First, 5 FIR Filters]]
+- 
 
 ## Documentation
 Needs to be similar to this:
