@@ -4,26 +4,20 @@ Date: 19/12/2024
 Description: 
     This class is used to implement a cascade FIR filter.
     The class is a subclass of the ThemisInterface class.
-    The class applies FIR filters in a cascade configuration
-    to a signal.
+    The class takes an input signal x[n] and output signal
+    y[n] and finds the impulse response h[n] of the system
+    if any.
 """
 
 from interface import ThemisInterface
 
-class CascadeFIR(ThemisInterface):
-    """Class used to implement a cascade FIR filter."""
-    
+class ReverseFIR(ThemisInterface):
+    """A class used to implement a cascade FIR filter."""
+
     def get_input_data(self):
         """Get input data from Themis."""
-        # Read the number of filters
-        self.num_filters = int(input())
-        # Read the filters
-        self.filters = []
-        for _ in range(self.num_filters):
-            kernel, _ = self.readSignal()
-            self.filters.append(kernel)
-        # Read the signal
-        self.signal, self.signal_length = self.readSignal()
+        self.input_signal, self.n_input = self.readSignal()
+        self.output_signal, self.n_output = self.readSignal()
 
     def FIR(self, kernel: list[int], signal: list[int]) -> list[int]:
         """
@@ -61,14 +55,34 @@ class CascadeFIR(ThemisInterface):
         return output
 
     def run(self):
-        """Compute y[n] from x[n] and all h[n]"""
-        # We will utilize the FIR function to apply all filters to the signal.
-        for i in range(self.num_filters):
-            self.signal = self.FIR(self.filters[i], self.signal)
+        """Run the reverse FIR function."""
+        # Length of FIR Filter
+        self.n_kernel = abs(self.n_input - self.n_output) + 1
+        # Initialize the kernel
+        self.kernel = [0] * self.n_kernel
+
+        # Iterate over the kernel
+        for i in range(self.n_kernel):
+            # Start at the output signal
+            current = self.output_signal[i]
+            # Iterate over the input signal till the current index or 
+            # the length of the input signal
+            for j in range(1, min(i + 1, self.n_input)):
+                # Minus the product of the kernel and the input signal
+                current -= self.input_signal[j] * self.kernel[i - j]
+            # Finally normalise the kernel for i from the temporary value
+            self.kernel[i] = current // self.input_signal[0]
 
     def print_output_data(self):
         """Print the output data."""
-        self.printSignal(self.signal)
+
+        # Check if the calculated kernel coefficients are correct
+        # If correct, return the kernel coefficients
+        if self.output_signal == self.FIR(self.kernel, self.input_signal):
+            self.printSignal(self.kernel)
+        else:
+            print("NO FIR")
 
 if __name__ == "__main__":
-    CascadeFIR()
+    ReverseFIR()
+        

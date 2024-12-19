@@ -1,0 +1,80 @@
+"""
+Authors: Matthijs Prinsen and Marinus v/d Ende
+Date: 19/12/2024
+Description: 
+    This class is used to implement a cascade FIR filter.
+    The class is a subclass of the ThemisInterface class.
+    The class takes an input signal x[n] and output signal
+    y[n] and finds the impulse response h[n] of the system
+    if any.
+"""
+
+import numpy as np
+from interface import ThemisInterface
+
+class ReverseFIR(ThemisInterface):
+    """A class used to implement a cascade FIR filter."""
+
+    def get_input_data(self):
+        self.input_signal, self.input_signal_length = self.readSignal()
+        self.output_signal, self.output_signal_length = self.readSignal()
+
+    def build_matrix(self):
+        """
+        Build the convolution matrix X and the output vector Y.
+        """
+        # Length of kernel
+        kernel_length = self.output_signal_length - self.input_signal_length + 1
+        
+        # Initialise the X Matrix (n_rows = input_signal_length, n_columns = kernel_length)
+        X = np.zeros((self.output_signal_length, kernel_length), dtype=int)
+        # Initialise the Y Vector (n_rows = output_signal_length)
+        Y = np.array(self.output_signal)
+
+        # Fill the convolution matrix X
+        for n in range(self.output_signal_length):
+            for m in range(kernel_length):
+                signal_index = n - m
+                if 0 <= signal_index < self.input_signal_length:
+                    X[n][m] = self.input_signal[signal_index]
+        return X, Y
+
+    def run(self):
+        # an interesting way to approach this problem is to
+        # use matrix multiplication to solve this.
+        # we can setup the matrices such that Y=H*X
+        # where Y is the output signal, H is the kernel and
+        # X is the input signal.
+
+        # We need to make our X matrix and Y vector first
+        X, Y = self.build_matrix()
+        
+        # Now we need to see if the matrix is square
+        # (Which i see most of the examples are)
+        # If it is we can use np.linalg.solve to solve for H
+        # If it is not we can use np.linalg.lstsq to solve for H
+        if X.shape[0] == X.shape[1]:
+            # okay, this line does a lot but it is essentially solves for H
+            # then rounds all values to the nearest int 
+            # (since all examples use ints)
+            # and finally converts it to a list
+            self.kernel = np.rint(np.linalg.solve(X, Y)).astype(int).tolist()
+        else:
+            h, residuals, _, _ = np.linalg.lstsq(X, Y, rcond=None)
+            # We now want to check the residuals to see if we are close to a solution
+            if len(residuals) == 0 or np.allclose(residuals, 0):
+                # This line does the same as above.
+                self.kernel = np.rint(h).astype(int).tolist()
+            else:
+                # If the residuals arent near zero we have no solution
+                self.kernel = None
+
+    def print_output_data(self):
+        if self.kernel is not None:
+            self.printSignal(self.kernel)
+        else:
+            print("NO FIR")
+
+if __name__ == "__main__":
+    ReverseFIR()
+        
