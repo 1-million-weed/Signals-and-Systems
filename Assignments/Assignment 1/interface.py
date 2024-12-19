@@ -1,3 +1,9 @@
+"""
+Authors: Matthijs Prinsen and Marinus v/d Ende
+Date: 19/12/2024
+Description: This file contains the interface class for Themis.
+"""
+
 class ThemisInterface:
     """
     An abstract class used to run our functions with Themis.
