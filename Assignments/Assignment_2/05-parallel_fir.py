@@ -2,19 +2,24 @@
 Authors: Matthijs Prinsen and Marinus v/d Ende
 Date: 19/12/2024
 Description: 
-    This class is used to implement a cascade FIR filter.
+    This class is used to implement a FIR filter.
     The class is a subclass of the ThemisInterface class.
-    The class finds the frequency response of a system.
+    The class finds the frequency response of a system with 
+    two inputs.
 """
 import math
 from interface import ThemisInterface
 
-class FrequencyResponse(ThemisInterface):
+class ParallelFIR(ThemisInterface):
+    """A class used to implement a parallel FIR filter."""
 
     def get_input_data(self):
         """Get input data from Themis."""	
-        self.impulse_response, self.n_impulse_response = self.readSignal()
+        self.h1, self.n_h1 = self.readSignal()
+        self.h2, self.n_h2 = self.readSignal()
         self.A, self.w, self.phi = self.readInputSignal()
+        
+        self.verbose = False
 
     def real_and_imaginary(self, impulse_response: list[int], w: int) -> tuple[float, float]:
         """
@@ -93,10 +98,35 @@ class FrequencyResponse(ThemisInterface):
 
     def run(self):
         """Run the specified fuction."""
-        # Compute the amplitude of the frequency response
-        self.amplitude = self.compute_amplitude(self.impulse_response, self.A, self.w)
-        # Compute the phase of the frequency response
-        self.phase = self.compute_phase(self.impulse_response, self.w, self.phi)
+        # Compute the amplitude and phase of the first frequency response
+        h1_amp = self.compute_amplitude(self.h1, self.A, self.w)
+        h1_phase = self.compute_phase(self.h1, self.w, self.phi)
+        # Compute the amplitude and phase of the second frequency response
+        h2_amp = self.compute_amplitude(self.h2, self.A, self.w)
+        h2_phase = self.compute_phase(self.h2, self.w, self.phi)
+
+        # Convert amplitude and phase to real and imaginary parts
+        h1_real = h1_amp * math.cos(h1_phase)
+        h1_imaginary = h1_amp * math.sin(h1_phase)
+        h2_real = h2_amp * math.cos(h2_phase)
+        h2_imaginary = h2_amp * math.sin(h2_phase)
+
+        # Combine the real and imaginary parts
+        real = h1_real + h2_real
+        imaginary = h1_imaginary + h2_imaginary
+
+        # Combine resulting amplitude and phase
+        self.amplitude = math.sqrt(real**2 + imaginary**2)
+        self.phase = math.atan2(imaginary, real)
+
+        if self.verbose:
+            # Debug prints
+            print(f"h1 amp: {h1_amp}")
+            print(f"h1 phase: {h1_phase}")
+            print(f"h2 amp: {h2_amp}")
+            print(f"h2 phase: {h2_phase}")
+            print(f"total real: {real}")
+            print(f"total imag: {imaginary}")
 
     def print_output_data(self):
         """Print the output data."""
@@ -117,4 +147,4 @@ class FrequencyResponse(ThemisInterface):
                 print(f"y[n]={amp:.2f}cos({w:.2f}*n-{phase:.2f})")
 
 if __name__ == "__main__":
-    FrequencyResponse()
+    ParallelFIR()
