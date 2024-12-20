@@ -101,7 +101,7 @@ y\[n] = h\[n]∗x\[n]  = Ay cos(ˆωn + ϕy)
    two lines:
    Impulse response h\[n] of the FIR filter
    Three floats: A_x, ˆω, ϕx  (defined above)
-2. For the math be sure to check out the sheets marked under [[#General notes]] 
+2. For the math be sure to check out the sheets marked under [[#General notes]]
    ~ we have the components of a signal x, and a filter. We want to make the resulting signal y's components
    ! firstly make an exception check for A = 0
    Example:

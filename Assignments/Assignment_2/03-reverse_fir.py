@@ -70,7 +70,8 @@ class ReverseFIR(ThemisInterface):
             for j in range(1, min(i + 1, self.n_input)):
                 # Minus the product of the kernel and the input signal
                 current -= self.input_signal[j] * self.kernel[i - j]
-            # Finally normalise the kernel for i from the temporary value
+            # Finally solve for the kernel by dividing the current value 
+            # by the first value of the input signal
             self.kernel[i] = current // self.input_signal[0]
 
     def print_output_data(self):

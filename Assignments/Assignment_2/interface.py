@@ -40,6 +40,19 @@ class ThemisInterface:
         signal = list(map(int, input_line.split(':')[1].strip()[1:-1].split(',')))
         return signal, length
     
+    def readInputSignal(self):
+        """
+        Reads three values from Themis.
+
+        Returns:
+            A tuple containing:
+            - A (int): The amplitude of signal x.
+            - w (int): The radian frequency.
+            - phi (int): The phase.
+        """
+        input_1, input_2, input_3 = map(float, input().split())
+        return input_1, input_2, input_3
+    
     def printSignal(self, signal):
         """
         Print a signal to Themis.
