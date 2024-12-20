@@ -8,6 +8,8 @@ Created: 2024-12-17
 # Topics 
 - [[Lecture 5 - FIR Filters]]
 - Frequency Response
+- [[Digital_Signal_Processing_First.pdf#page=168|Digital_Signal_Processing_First, 5 FIR Filters]]
+- 
 
 ## Documentation
 Needs to be similar to this:
@@ -35,17 +37,17 @@ look at [[Sigsys_cheatsheets - Copy.pdf]] for concepts
 ## 2.1
 This function will be used in following exercises
 - *Sliding the filter through the signal* = Convolution of $h[n]$ and $x[n-k]$
-- [[lec4-main1.pdf]] slide 36 on *convolutions*
+- [[lec4-main1.pdf#page=39&annotation=373R|lec4-main1, page 39]] slide 36 on *convolutions*
 - math to do:
 1. **Input**: Kernel $h[n]$, discrete input signal $x[n]$
-   Parse the input h\[n] into an array
-2. Calculate the sum of rows in matrix with columns $h[n]*x[n-k]$ like: 
-   {$h[0]*x[n-0]$, $h[1]*x[n-1]$ , $h[2]*x[n-2]$ }
+   Parse the input $h[n]$ into an array
+3. Calculate the sum of rows in matrix with columns $h[n]*x[n-k]$ like: 
+   {$h[0]*x[n-0]$, $h[1]*x[n-1]$ , $h[2]*x[n-2]$ }![[Pasted image 20241219163358.png]]
 3. **output**: vector with results
 
 ## 2.2
 - FIR filter: a kernel used to modify a signal. 
-- Cascade: we apply the signals one by one
+- Cascade: we apply the filters to the signal one by one
 1. **Input**: 
    number of filters $i$ 
    \[filters 1:$i$\]  
@@ -71,7 +73,6 @@ method: Run it through code from 2.1 k times
 **"Write the documentation for this problem."**
 FIR filter checker
 - ~for the inverse of a filter, we take the inverse of the matrix
-
 
 1. **Input**: 
    discrete input signal x\[n]
@@ -100,7 +101,7 @@ y\[n] = h\[n]∗x\[n]  = Ay cos(ˆωn + ϕy)
    two lines:
    Impulse response h\[n] of the FIR filter
    Three floats: A_x, ˆω, ϕx  (defined above)
-2. For the math be sure to check out the sheets marked under [[#General notes]] 
+2. For the math be sure to check out the sheets marked under [[#General notes]]
    ~ we have the components of a signal x, and a filter. We want to make the resulting signal y's components
    ! firstly make an exception check for A = 0
    Example:
@@ -111,7 +112,7 @@ Input:
 Steps:
 Compute $H(\hat{\omega})$:
     
-    $$H(ω^)=1⋅e−j⋅0+2⋅e−j⋅1.0472⋅1+1⋅e−j⋅1.0472⋅2H(\hat{\omega}) = 1 \cdot e^{-j \cdot 0} + 2 \cdot e^{-j \cdot 1.0472 \cdot 1} + 1 \cdot e^{-j \cdot 1.0472 \cdot 2}H(ω^)=1⋅e−j⋅0+2⋅e−j⋅1.0472⋅1+1⋅e−j⋅1.0472⋅2$$
+    $$H(\hat{w})=1⋅e−j⋅0+2⋅e−j⋅1.0472⋅1+1⋅e−j⋅1.0472⋅2H(\hat{\omega}) = 1 \cdot e^{-j \cdot 0} + 2 \cdot e^{-j \cdot 1.0472 \cdot 1} + 1 \cdot e^{-j \cdot 1.0472 \cdot 2}H(ω^)=1⋅e−j⋅0+2⋅e−j⋅1.0472⋅1+1⋅e−j⋅1.0472⋅2$$
     
     
 Compute $Ay$​:
