@@ -18,8 +18,6 @@ class ParallelFIR(ThemisInterface):
         self.h1, self.n_h1 = self.readSignal()
         self.h2, self.n_h2 = self.readSignal()
         self.A, self.w, self.phi = self.readInputSignal()
-        
-        self.verbose = False
 
     def real_and_imaginary(self, impulse_response: list[int], w: int) -> tuple[float, float]:
         """
