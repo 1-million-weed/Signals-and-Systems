@@ -12,3 +12,9 @@ Lecture notes on this: [[Lecture 6 - Fourier Transform#Pearson Correlator (1D Re
 >[!note] Simplified Formula
 > $$y[n] = \frac{L \left( \sum_k x[n + k] h[k] \right) - \left( \sum_k x[n + k] \right) \left( \sum_k h[k] \right)}{\sqrt{L \sum_k x[n + k]^2 - \left( \sum_k x[n + k] \right)^2} \cdot \sqrt{L \sum_k h[k]^2 - \left( \sum_k h[k] \right)^2}}$$
 
+
+## 2.2 Discrete Fourier transform using Vandermonde matrix
+
+In lecture notes: [[Lecture 6 - Fourier Transform#Computing Fourier Transform]]
+
+>5

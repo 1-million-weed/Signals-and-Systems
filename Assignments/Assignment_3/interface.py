@@ -9,16 +9,16 @@ class ThemisInterface:
     An abstract class used to run our functions with Themis.
     """
 
-    def __init__(self, verbose: bool = False):
+    def __init__(self, verbose: bool = False, themis: bool = True):
         """Constructor starts program when Themis calls."""
         # For debugging purposes
         self.verbose = verbose
 
-        # Very self explanatory, we first get the input data, 
-        # then run the function and finally print the output data
-        self.get_input_data()
-        self.run()
-        self.print_output_data()
+        # If we are running the program in Themis (True)
+        if themis:
+            self.get_input_data()
+            self.run()
+            self.print_output_data()
     
     def get_input_data(self):
         """Get input data from Themis."""
@@ -64,6 +64,38 @@ class ThemisInterface:
         Print a signal to Themis.
         
         Args:
-            signal (list of ints): The signal to print to Themis.
+            - signal (list of ints): The signal to print to Themis.
         """
         print(f"{len(signal)}: {signal}")
+
+    def cln(self, n: float, j: bool = False) -> str:
+        """
+        Cleans and formats a number for display.
+
+        If the number is very small (between -0.001 and 0.001), it returns "0.00".
+        If the number is imaginary (indicated by the `j` parameter), it returns the 
+        number in the format "+j0.00", "-j0.00", or "+jN.NN" depending on the value
+        of `n`.
+
+        Parameters:
+            - n (float): The number to be formatted.
+            - j (bool): A flag indicating if the number is imaginary. Default is False.
+
+        Returns:
+            - str: The formatted number as a string.
+        """
+
+        # if the number is imaginary we return +j0.00
+        # This just makes printing so much easier.
+        if j:
+            if n < 1e-3 and n > -1e-3: # if its small
+                return "+j0.00"
+            if n < 0: # if its negative
+                return f"-j{abs(n):.2f}"
+            return f"+j{n:.2f}" # else its positive
+
+        # if the number is very small we return 0.00
+        if n < 1e-3 and n > -1e-3:
+            return "0.00"
+        
+        return f"{n:.2f}"

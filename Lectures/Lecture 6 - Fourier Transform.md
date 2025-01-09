@@ -6,11 +6,11 @@ tags:
   - LLM
 Date: 2024-12-17
 ---
-The Discrete Fourier Transform (DFT) converts a sequence \( x[n] \) from the time domain to the frequency domain.  
+The Discrete Fourier Transform (DFT) converts a sequence $x[n]$ from the time domain to the frequency domain.  
 - Formula: $$X[k] = \sum_{n=0}^{N-1} x[n] e^{-j\frac{2\pi}{N}kn}$$
 - ($k$): Frequency index  
-- ($N$): Number of samples in ($x[n]$).
-- ($X[k]$): Represents the frequency components of ($x[n]$).
+- ($N$): Number of samples in $x[n]$.
+- ($X[k]$): Represents the frequency components of $x[n]$.
 
 ## DFT and Time/Frequency Domain
 
