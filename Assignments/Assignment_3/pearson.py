@@ -14,7 +14,6 @@ class PearsonCorrelator(ThemisInterface):
         self.x, self.x_len = self.readSignal()
 
     def run(self):
-
         # Initialize the list of pearson correlation values
         pearsons = []
 
@@ -51,7 +50,6 @@ class PearsonCorrelator(ThemisInterface):
         
         self.pearsons = pearsons
         
-    
     def print_output_data(self):
         print(len(self.pearsons), end = ": ")
         formatted_pearsons = "["+','.join(f"{p:.5f}" for p in self.pearsons)+"]"
