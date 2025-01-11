@@ -1,6 +1,6 @@
 """
 Authors: Matthijs Prinsen and Marinus v/d Ende
-Date: 08/01/2025
+Date: 11/01/2025
 Description: 
     This module provides an implementation of the Inverse Discrete Fourier Transform 
     (IDFT) using the Vandermonde matrix approach.
@@ -30,7 +30,7 @@ class IDFTVandermonde(ThemisInterface):
         # matrix with two for loops then we are multiplying it with a vector
         # again with two for loops. This is not efficient.
         vandermonde = []
-        for n in range(length):
+        for n in range(length): # 
             row = []
             for k in range(length):
                 # Calculate omega
