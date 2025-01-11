@@ -1,19 +1,19 @@
 
 import unittest
-from dft import DFTVandermonde
+from dft import IDFTVandermonde
 import numpy as np
 
 class TestDFTVandermonde(unittest.TestCase):
     def test_build_vandermonde(self):
         print("test_build_vandermonde")
-        dft = DFTVandermonde(themis=False)
+        dft = IDFTVandermonde(themis=False)
         W = dft.build_vandermonde(4)
         self.assertEqual(len(W), 4)
         self.assertEqual(len(W[0]), 4)
 
     def test_dot_product(self):
         print("test_dot_product")
-        dft = DFTVandermonde(themis=False) # ThemisInterface atrubute
+        dft = IDFTVandermonde(themis=False) # ThemisInterface atrubute
         x = [1, 2, 3, 4]
         W = [
             [1,1,1,1],
@@ -27,7 +27,7 @@ class TestDFTVandermonde(unittest.TestCase):
 
     def test_vandermonde_dot_product(self):
         print("test_vandermonde_dot_product")
-        dft = DFTVandermonde(themis=False)
+        dft = IDFTVandermonde(themis=False)
         x= [1, 2, 3, 4]
         W = dft.build_vandermonde(len(x))
         result = dft.dot_product(x, W)
