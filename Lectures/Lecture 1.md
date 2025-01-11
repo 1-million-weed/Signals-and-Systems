@@ -1,3 +1,10 @@
+---
+tags:
+  - Matthijs
+  - Lectures
+  - Marinus
+---
+
 # Exam
 
 >[!warning] Most of exam questions come form `tutorials`
@@ -33,8 +40,8 @@ Signal independent of time - EEGs
 >[!note] Comment
 >Note the convention of discrete-time x\[n\] continious time f(x)
 
-- Signals may be multi-dimentional 
-	- pics by analog camera 
+- Signals may be multi-dimensional 
+	- Pictures by (analogue) camera have 2 dimensions x\[n,m]
 
 > [!info] Weekend millionairs
 > which of the following signals is discrete
@@ -46,12 +53,17 @@ Signal independent of time - EEGs
 
 ### Definition [[System]]
 
-- continious-time system transforms continous-time signals
+- continuous-time system transforms continuous-time signals 
+  e.g. an analogue amplifier - the signal is not broken up
 - discrete-time system transforms discrete-time signals
-- sampler: continous to digital signals
+  e.g. a digital amplifier - the signal is measured at a point, and sampled an interval later again, etc.
+- sampler: continuous to digital signals
+  Also known as a C-to-D converter
 
+## complex systems
+- Consist of a sequence of operations
+  e.g. ![[Pasted image 20241225104237.png]]
 
 [[Conversions.canvas|Conversions]]
 
 
-Complete tutorial excercises

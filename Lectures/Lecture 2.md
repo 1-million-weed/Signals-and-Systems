@@ -1,29 +1,45 @@
+---
+tags:
+  - Marinus
+  - Lectures
+  - Matthijs
+---
+
 # Recap
 signals: amplitude frequency and phase
 
 Sinusoidal signal 
-$$x(t)=Acos(w_0t+\phi)$$
-Magnitude:
+$$x(t)=A*cos(w_0t+\phi)$$
+where $x(t)$ is the signal, $A$ is the amplitude, $\omega_0$ is the radian frequency and $\phi$ is the phase
+
+Amplitude $A$:
 $$A=\frac{top-bottom}{2}$$
 
 Units of periods is `time`
 
-period
-$$w_0=\frac{2\pi}{T}$$
+period $T$ in seconds
+$$T=\frac{2\pi}{\omega_0}=\frac{1}{f}$$
 Phase $\Phi$
 $$150\pi(0.045)+\phi=2\pi(3.5)->\phi=0.25\pi$$
 
-> Next comes euliers formula
+Euler's formula
+$$e^{j\theta}=cos(\theta)+j*sin(\theta)$$
+$$cos(\theta)=\frac{e^{j\theta}+e^{-j\theta}}{2}$$
+$$sin(\theta)=\frac{e^{j\theta}-e^{-j\theta}}{2j}$$
 
+## phasor addition rule
 Now we can add sinusoids with the same frequency:
-$$x(t)=\sum$$
-
-
-1. get the polar phaser
-2. polar to cartesian coordinates. radius is amplitude, 
+$$x(t)=\sum_{k=1}^N{A_k*cos(\omega_0t+\phi_k)=Acos(\omega_0+\phi)}$$
+1. Get the phaser representation in polar coordinates
+   $X_k=A_k*e^{j\phi k}$ for each term
+2. Convert polar to cartesian coordinates
+   $X_k=a_k+jb_k$  
 3. calculate sum of phasors 
-4. convert cartesian to polar coords
+   $X=(\sum a_k)+j(\sum b_k)$
+4. convert back from cartesian to polar
+   $X=Ae^{j\phi}$
 5. obtain sinusoid
+   $A*cos(\omega_0t+\phi)$
 
 # Spectrum
 
