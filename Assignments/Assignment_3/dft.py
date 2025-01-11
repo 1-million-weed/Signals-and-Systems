@@ -3,10 +3,7 @@ Authors: Matthijs Prinsen and Marinus v/d Ende
 Date: 08/01/2025
 Description: 
     This module provides an implementation of the Discrete Fourier Transform (DFT) 
-    using the Vandermonde matrix approach. 
-    The DFTVandermonde class includes methods to read input data, construct the 
-    Vandermonde matrix, compute the DFT using matrix-vector multiplication, 
-    and print the output data.
+    using the Vandermonde matrix approach.
 """
 
 from interface import ThemisInterface
