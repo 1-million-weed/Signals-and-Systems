@@ -3,11 +3,12 @@ tags:
   - Marinus
   - Lectures
   - LLM
+  - _FirstPass
 Created: 2025-01-07
 ---
 think about the steps for solving the questions. 
 link the theory to the practical
-wow..
+wow... insightful
 
 bring A4 summary sheet
 no calcs or other devices allowed 
@@ -52,13 +53,14 @@ The z-transform of an $L$-length signal $x[n]$ is defined as: $$ X(z) = \sum_{k=
 ### Interpretation: 
 - The z-transform represents a signal $x[n]$ as a polynomial $X(z)$ of degree $L-1$ in the variable $z^{-1}$. 
 - It is a helpful tool for analysing discrete signals and systems.
-### Example of z-transform Consider the signal: $$ x[n] = \delta[n - n_0] $$ The z-transform of $x[n]$ is: $$ X(z) = z^{-n_0} $$
+### Example of z-transform Consider the signal: 
+$$ x[n] = \delta[n - n_0] $$ The z-transform of $x[n]$ is: $$ X(z) = z^{-n_0} $$
 ![[Pasted image 20250107131604.png]]
 The z-transform for $x[n]$ is:
 $$
 X(z) = 2 + 4z^{-1} + 6z^{-2} + 4z^{-3} + 2z^{-4}
 $$
-- here we can analyse interesting signals and systems and etract properties from those signals
+- here we can analyse interesting signals and systems and extract properties from those signals
 ## z-transform of FIR Filter
 - z-transform of a discrete system
 ### Impulse Response
@@ -333,7 +335,7 @@ $$
 
 ## Roots of z-transforms
 
-### General Form
+### General Form 
 The z-transform of a filter can be represented in factored form:
 $$
 H(z) = G \prod_{k=1}^{M} (1 - z_k z^{-1}) = G \prod_{k=1}^{M} \left(\frac{z - z_k}{z}\right)

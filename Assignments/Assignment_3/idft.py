@@ -1,6 +1,6 @@
 """
 Authors: Matthijs Prinsen and Marinus v/d Ende
-Date: 08/01/2025
+Date: 11/01/2025
 Description: 
     This module provides an implementation of the Inverse Discrete Fourier Transform 
     (IDFT) using the Vandermonde matrix approach.
@@ -26,11 +26,12 @@ class IDFTVandermonde(ThemisInterface):
 
     def build_vandermonde(self, length: int) -> list[list[tuple[float, float]]]:
         # Let me make clear that I am not a fan of this matrix or question 
-        # Our complexity is O(2n^2) which is horrible. Were first making the 
-        # matrix with two for loops then we are multiplying it with a vector
-        # again with two for loops. This is not efficient.
+        # Our complexity is O(2n^2) which is horrible. 
+        # Were first making the matrix with two for loops then we are 
+        # multiplying it with a vector again with two for loops. 
+        # This is very inefficient.
         vandermonde = []
-        for n in range(length):
+        for n in range(length): # 
             row = []
             for k in range(length):
                 # Calculate omega
@@ -63,7 +64,6 @@ class IDFTVandermonde(ThemisInterface):
                 imag_sum += imag * x[k]
             self.X.append((real_sum, imag_sum))
         return self.X
-        
     
     def print_output_data(self):
         # Finally, we can print the output data
@@ -75,3 +75,4 @@ class IDFTVandermonde(ThemisInterface):
 if __name__ == "__main__":
     IDFTVandermonde()
         
+

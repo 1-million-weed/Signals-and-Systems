@@ -11,32 +11,39 @@ class FastFourierTransform(ThemisInterface):
     def get_input_data(self):
         self.x, self.x_len = self.readSignal()
 
-    def run(self, x:list=None, x_len:int=None):
-        self.x_len = x_len
-        self.x = x
+    def run(self):
+        self.combined = self.recursive_fft(self.x, self.x_len)
+        
+    def recursive_fft(self, x:list[int], x_len:int)->list[complex]:
+
+        if self.verbose:
+            print(f"x: {x}")
+            print(f"x_len: {x_len}")
         
         # base case: list has 1 element
-        if self.x_len == 1:
+        if x_len == 1:
             return x[0]
         
-        # check if x is None: first iterations
-        if self.x is None:
-            # get input data
-            self.get_input_data()
-        
+        # check if x is None: first iterations - Why???
+#        if self.x is None:
+#            # get input data
+#            self.get_input_data()
+
         # check length of x is power of 2
-        if self.x_len // 2 == 1:
+        if x_len // 2 == 1:
             # pad x with zeros
-                self.x.append(0)
-                self.x_len += 1
-        
+                x.append(0)
+                x_len += 1
+
         # split x into even and odd indeces
-        x_even = self.x[0::2]
-        x_odd = self.x[1::2]
+        x_even, x_odd = x[0::2], x[1::2]
+        if self.verbose:
+            print(f"x_even: {x_even}")
+            print(f"x_odd: {x_odd}")
         
         # recursively calculate the FFT of the even and odd parts
-        FastFourierTransform.run(self, x_even, len(x_even))
-        FastFourierTransform.run(self, x_odd, len(x_even))
+        ye = self.recursive_fft(x_even, len(x_even))
+        yo = self.recursive_fft(x_odd, len(x_odd)) # why len(x_even) and not len(x_odd)?
         
         # Combine the results of the even and odd parts
         x_new = []
@@ -52,6 +59,11 @@ class FastFourierTransform(ThemisInterface):
 
         return combined
 
+    def print_output_data(self):
+        for i in range(len(self.combined)):
+            real = self.cln(self.combined[i].real)
+            imag = self.cln(self.combined[i].imag, j=True)
+            print(f"{real}{imag}")
 
 if __name__ == "__main__":
-    FastFourierTransform()
+    FastFourierTransform(verbose=True)
