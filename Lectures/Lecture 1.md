@@ -9,7 +9,8 @@ tags:
 
 >[!warning] Most of exam questions come form `tutorials`
 
-> [!note] Q&A Quiz before exam on 17 January 
+
+> 	[!note] Q&A Quiz before exam on 17 January 
 > A4 Cheat sheet (Double sided)
 
 # What is SaS
