@@ -41,14 +41,13 @@ class Fast_Fourier_transform():
         odd = self._calculate_recursive(signal[1::2])
         y = [0] * n
         theta = -2 * math.pi /n
-        for x in range(n //2):
+        for x in range(n//2):
             cos_result = math.cos(theta * x)
             sin_result = math.sin(theta * x)
             omega = complex(cos_result, sin_result)
 
-
             y[x] = even[x] + omega * odd[x]
-            y[x + n //2] = even[x] - omega * odd[x]
+            y[x + n//2] = even[x] - omega * odd[x]
         return y
     
     def display(self) -> None:
