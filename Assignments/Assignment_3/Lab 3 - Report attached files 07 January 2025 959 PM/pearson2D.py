@@ -12,7 +12,7 @@ class GrayImage:
         self.height = height
         self.data = data
 
-def readPGM(filename):
+def readPGM(filename) -> GrayImage:
     # Open the image file
     image = Image.open(filename)
     # Convert the image to grayscale
@@ -31,9 +31,9 @@ def writePGM(filename, img):
     # Save the image to a file
     image.save(filename)
 
-def mirror(image):
+def mirror(image: GrayImage) -> np.ndarray:
     # Convert the GrayImage data to a numpy array
-    image = np.array(img.data)
+    image = np.array(image.data)
     # Reflect each row of the image
     image = np.fliplr(image)
     # Reflect the rows of the image
@@ -118,24 +118,35 @@ Perform a 2D FFT inplace given a complex 2D array
 The direction dir can be FORWARD or REVERSE.
 '''
 
-def fft2D(direction, re, im):
-    '''YOU HAVE TO IMPLEMENT THE BODY OF THIS FUNCTION YOURSELF'''
-    '''YOU CAN USE THE fft1D() FUNCTION ABOVE'''
+def fft2D(direction:str, re:np.ndarray, im:np.ndarray) -> tuple[np.ndarray, np.ndarray]:
 
     # 1) Get the shape of the real part of the image
 
+    real_shape = re.shape
+
     # 2) Perform 1D FFT on each row of the real and imaginary parts of the image
+
+    for i in range(real_shape[0]):
+        re[i], im[i] = fft1D(direction, re[i], im[i])
     
     # 3) Initialize arrays to hold the real and imaginary parts of the column transform
     
+    col_re = np.zeros(real_shape)
+    col_im = np.zeros(real_shape)
+
     # 4) Perform 1D FFT on each column of the real and imaginary parts of the image
+
+    for i in range(real_shape[1]):
+        col_re[:, i], col_im[:, i] = fft1D(direction, re[:, i], im[:, i])
+
+    return col_re, col_im
+
     
-
 ##############################################
 ##############################################
 ##############################################
 
-def fftCorrelator(image, mask, corrWidth, corrHeight):
+def fftCorrelator(image:GrayImage, mask:GrayImage, corrWidth, corrHeight):
     # Calculate the width and height for the FFT, which should be a power of two
     width = int(powerOfTwo(image.width + mask.width - 1))
     height = int(powerOfTwo(image.height + mask.height - 1))
@@ -246,7 +257,7 @@ def sqsum(row0, col0, row1, col1, im):
 
 ##############################################
 
-def pearsonCorrelator(image, mask, corrWidth, corrHeight):
+def pearsonCorrelator(image: GrayImage, mask: GrayImage, corrWidth, corrHeight):
     # Get the image and mask data
     im = image.data
     ms = mask.data
