@@ -11,22 +11,24 @@ Its been a long day.
 
 > [!note] NOTE
 > For every week, id recommend you have a look at the brightspace page as well. They normally have questions on there that help guide you on how to work through the material. 
-	
+
 # Week 1
 
 Book:
 - chapter 1, “Introduction”  and 2, “Sinoids” 
 
-| SPF            | DSPF           |
-| -------------- | -------------- |
-| P 2.2 (p. 31)  | P 2.2 (p. 60)  |
-| Ex 2.1 (p. 11) | Ex 2.1 (p. 34) |
-| Ex 2.6 (p. 19) | Ex 2.6 (p. 44) |
-| Ex 2.9 (p. 26) | Ex 2.8 (p. 54) |
-| P 2.4 (p. 32)  | P 2.4 (p. 61)  |
-| P 2.6 (p. 32)  | P 2.6 (p. 61)  |
-| P 2.15 (p. 33) | P 2.15 (p. 63) |
-| P 2.20 (p. 34) | P 2.24 (p. 65) |
+| SPF            | DSPF           | Done |
+| -------------- | -------------- |------|
+| P 2.2 (p. 31)  | P 2.2 (p. 60)  | [X]  |
+| Ex 2.1 (p. 11) | Ex 2.1 (p. 34) | [X]  |
+| Ex 2.6 (p. 19) | Ex 2.6 (p. 44) | [X]  |
+| Ex 2.9 (p. 26) | Ex 2.8 (p. 54) | [X]  |
+| P 2.4 (p. 32)  | P 2.4 (p. 61)  | [X]  |
+| P 2.6 (p. 32)  | P 2.6 (p. 61)  | [X]  |
+| P 2.15 (p. 33) | P 2.15 (p. 63) | [X]  |
+| P 2.20 (p. 34) | P 2.24 (p. 65) | [X]  |
+
+
 > [!note] Tutorial 1
 > Questions: [[Cheat sheet item+Tutorial1_Signals.pdf]]
 > Answers: [[SigSys_Tutorial1_answers.pdf]]
@@ -49,7 +51,7 @@ Book:
 > Questions: [[SigSys_Tutorial2.pdf]]
 > Answers: [[SigSys_Tutorial2_answers.pdf]]
 
-# Week 4
+# Week 3
 
 - Chapter 4, "Sampling and Aliasing" in Schafer, R. W., Yoder, M. A., & McClellan, J. H. (2003). Signal Processing First. Prentice Hall
 
@@ -65,7 +67,7 @@ Book:
 > Answers: [[SigSys_Tutorial3_answers.pdf]]
 > Slides: [[prac-3.pdf]]
 
-# Week 5
+# Week 4
 
 - Chapter 5, "FIR Filters" in Schafer, R. W., Yoder, M. A., & McClellan, J. H. (2003). Signal Processing First. Prentice Hall
 

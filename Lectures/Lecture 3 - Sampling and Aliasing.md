@@ -75,14 +75,14 @@ ideas to business solutions
 
 # Sampling
 
--  continious discrete converter system
+-  continuous discrete converter system
 	- System: some sort of transformation of a signal
 	- encoding decoding
 	- could be a physical component that makes these signal changes
-	- manipulate signal on continous time
+	- manipulate signal on continuous time
 - Applications are computer based
 	- manipulations are done on discrete signals 
-	- continious signals have to be discretized
+	- continuous signals have to be discretized
 	- Digital signals have to be made continuous
 - ![[Pasted image 20241126140650.png]]
 - ![[Transformations Lec 3.canvas]]
@@ -90,36 +90,35 @@ ideas to business solutions
 	- n is an integer number. (equation 5)
 - common sampling rate for audio is 44100 Hz
 - $\hat\omega$ is not the same as $\omega$
-- if the sample rate is too long, we cannot reproduce the continuous signal (undersampling)![[Pasted image 20241126141503.png]]
-- sampling rate/period gives ground ot recover continuous signals
-- next is under sampling and antiailiasing
+- if the sample rate is too low, we cannot reproduce the continuous signal (under sampling)![[Pasted image 20241126141503.png]]
+- sampling rate/period gives ground to recover continuous signals
+- next is under sampling and antialiasing
 
 # Aliasing
 
 - used in computer graphics and games
 - next week tutorial is about antialiasing
-- Suppose we sample \( \cos(2\pi(100)t) \) at \( f_s = 500 \)
+Suppose we sample $\cos(2\pi(100)t)$ at $f_s = 500$:
 
-  $$
-  x_1[n] = \cos\left(2\pi(100)n / 500\right) = \cos(0.4\pi)
+$$
+x_1[n] = \cos\left(\frac{2\pi(100)n}{500}\right) = \cos(0.4\pi)
+$$
+
+- Suppose we also sample $\cos(2\pi(600)t)$ at $f_s = 500$:
+
+$$
+  x_1[n] = \cos\left(\frac{2\pi(600)n}{500}\right) = \cos(2.4\pi) = \cos(0.4\pi)
   $$
 
-- Suppose we also sample \( \cos(2\pi(600)t) \) at \( f_s = 500 \)
-
-  $$
-  x_1[n] = \cos\left(2\pi(600)n / 500\right) = \cos(2.4\pi) = \cos(0.4\pi)
-  $$
-
-- Suppose we also sample \( \cos(2\pi(400)t) \) at \( f_s = 500 \)
-
-  $$
+- Suppose we also sample $\cos(2\pi(400)t)$ at $f_s = 500$:
+$$
   x_1[n] = \cos\left(2\pi(600)n / 500\right) = \cos(1.6\pi) = \cos(-0.4\pi) = \cos(0.4\pi)
   $$
 - same discrete time signals with different sinusoids.
 - prime example of under sampling and the issues of trying to reconstruct the continuous signal
 
-- Shannon sampling theorym
-	- wasnt concentrating
+- Shannon sampling theorem
+	- wasn't concentrating
 
 - Nyquist rate is what we call the best sampling rate 
 	- $f_s>2f_{max}$
